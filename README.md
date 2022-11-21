@@ -7,41 +7,35 @@
 - djangorestframework 3.12
 - djangorestframework-simplejwt 5.2
 - PyJWT 2.1
+- Docker 20.10.20
+- psycopg2-binary 2.9.3
 
 ### Как запустить проект:
 Клонировать репозиторий и перейдти в него в командной строке с помощью команд:
 ```sh
-git clone git@github.com:Ruso-peligroso/api_yamdb.git
-cd api_yamdb
+git clone https://github.com/russ044/infra_sp2.git
+cd infra_sp2
 ```
-Создать и активировать виртуальную среду:
+Cоберите образ при помощи docker-compose:
 ```sh
-python3 -m venv env
-source env/bin/activate
-python3 -m pip install --upgrade pip
-```
-Установить зависимости из файла requirements.txt:
-```sh
-pip install -r requirements.txt
+cd infra
+docker-compose up -d --build
 ```
 Запустить миграции:
 ```sh
-python3 manage.py migrate
+docker-compose exec web python manage.py migrate
 ```
-Запустить импорт csv:
+Соберите статику:
 ```sh
-python3 manage.py import_csv
+docker-compose exec web python manage.py collectstatic --no-input
 ```
-Запустить сервер:
+Создайте суперюзера для доступа к админке:
 ```sh
-python3 manage.py runserver
+docker-compose exec web python manage.py createsuperuser
 ```
 
 ### Документация API
-Документация доступна по этому [адресу](http://127.0.0.1:8000/redoc).
+Документация доступна по этому [адресу](http://127.0.0.1/redoc).
 
-### Авторы проекта:
-- Химич К.А.  [Ruso-peligroso](https://github.com/Ruso-peligroso)
+### Автор проекта:
 - Емцов А.В.  [russ044](https://github.com/russ044)
-- Саратовцев Максим  [zxz27](https://github.com/zxz27)
-```
