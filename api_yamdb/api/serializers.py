@@ -1,10 +1,10 @@
 from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
-
-from api_yamdb import settings
 from reviews.models import Category, Comment, Genre, Review, Title, User
 from reviews.validators import username_validate
+
+from api_yamdb import settings
 
 FEW_REVIEWS_ERROR = 'можно оставить только один отзыв к произведению'
 

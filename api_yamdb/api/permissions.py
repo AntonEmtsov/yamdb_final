@@ -1,6 +1,5 @@
 from rest_framework import permissions
 
-
 UPDATE_ERROR_TEXT = 'Изменение чужого контента запрещено!'
 
 

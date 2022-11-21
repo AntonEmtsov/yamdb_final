@@ -4,35 +4,25 @@ from django.db import IntegrityError
 from django.db.models import Avg
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets, status, mixins, filters
+from rest_framework import filters, mixins, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.pagination import LimitOffsetPagination
+from rest_framework.permissions import (AllowAny, IsAuthenticated,
+                                        IsAuthenticatedOrReadOnly)
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.permissions import (
-    AllowAny,
-    IsAuthenticated,
-    IsAuthenticatedOrReadOnly,
-)
 from rest_framework_simplejwt.tokens import RefreshToken
+from reviews.models import Category, Genre, Review, Title, User
 
 from api_yamdb.settings import DEFAULT_EMAIL
+
 from .filters import Filter
-from .permissions import (
-    IsAdmin, IsAuthorOrStaffOrReadOnly, ReadOnly)
-from reviews.models import Category, Genre, Review, Title, User
-from .serializers import (
-    CategorySerializer,
-    CommentSerializer,
-    EditUserSerializer,
-    GenreSerializer,
-    ReviewSerializer,
-    SignUpApiSerializer,
-    TitleViewSerializer,
-    TitleWriteSerializer,
-    TokenSerializer,
-    UserSerializer,
-)
+from .permissions import IsAdmin, IsAuthorOrStaffOrReadOnly, ReadOnly
+from .serializers import (CategorySerializer, CommentSerializer,
+                          EditUserSerializer, GenreSerializer,
+                          ReviewSerializer, SignUpApiSerializer,
+                          TitleViewSerializer, TitleWriteSerializer,
+                          TokenSerializer, UserSerializer)
 
 
 class ReviewViewSet(viewsets.ModelViewSet):

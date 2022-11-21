@@ -2,8 +2,8 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 from api_yamdb import settings
-from .validators import username_validate, validate_year
 
+from .validators import username_validate, validate_year
 
 USER = 'user'
 MODERATOR = 'moderator'
