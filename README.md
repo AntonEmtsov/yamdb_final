@@ -17,24 +17,6 @@
 git clone https://github.com/russ044/yamdb_final.git
 cd yamdb_final
 ```
-Cоберите образ при помощи docker-compose:
-```sh
-cd infra
-docker-compose up -d --build
-```
-Запустить миграции:
-```sh
-docker-compose exec web python manage.py migrate
-```
-Соберите статику:
-```sh
-docker-compose exec web python manage.py collectstatic --no-input
-```
-Создайте суперюзера для доступа к админке:
-```sh
-docker-compose exec web python manage.py createsuperuser
-```
-
 ### Документация API
 Документация доступна по этому [адресу](http://127.0.0.1/redoc).
 
