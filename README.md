@@ -1,4 +1,5 @@
 # YaMDb
+![yamdb_workflow](https://github.com/russ044/yamdb_final/workflows/yamdb_workflow/badge.svg)
 ## Проект YaMDb API позволяет вам получить доступ к данным с веб-сайта YaMDb для вашего интерфейса. Это просто, удобно и безопасно
 
 ### Тенологии используемые в проекте:
