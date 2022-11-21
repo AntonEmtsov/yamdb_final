@@ -14,8 +14,8 @@
 ### Как запустить проект:
 Клонировать репозиторий и перейдти в него в командной строке с помощью команд:
 ```sh
-git clone https://github.com/russ044/infra_sp2.git
-cd infra_sp2
+git clone https://github.com/russ044/yamdb_final.git
+cd yamdb_final
 ```
 Cоберите образ при помощи docker-compose:
 ```sh
